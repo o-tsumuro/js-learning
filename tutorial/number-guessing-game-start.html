@@ -49,7 +49,7 @@
 
       let randomNumber = Math.floor(Math.random() * 100) + 1;
 
-      const guess = document.querySelector(".guess");
+      const guesses = document.querySelector(".guesses");
       const lastResult = document.querySelecor(".lastResult");
       const lowOrHi = document.querySelector(".lowOrHi");
 
@@ -60,7 +60,34 @@
       let resetButton;
 
       function checkGuess() {
-        alert("I am a placeholder");
+        const userGuess = Number(guessField.value);
+        if (guessCount === 1) {
+            guesses.textContent = "Previous guesses:";
+        }
+        guesses.textContent = `${guesses.textContent} ${userGuess}`;
+
+        if (userGuess === randomNumber) {
+            lastResult.textContent = "Congratulations! You got it right!";
+            lastResult.style.backgroundColor = "green";
+            lowOrHi.textContent = "";
+            setGameOver();
+        } else if (guessCount === 10) {
+            lastResult.textContent = "!!!GAME OVER!!!";
+            lowOrHi.textContent = "";
+            setGameOver();
+        } else {
+            lastResult.textContent = "wrong!";
+            lastResult.style.backgroundColor = "red";
+            if (userGuess < rendomNumber) {
+                lowOrHi.textContent = "Last guess was too low!";
+            } else if (userGuess > randomNumber) {
+                lowOrHi.textContent = "Last guess was too high!";
+            }
+        }
+
+        guessCount++;
+        guessField.value = "";
+        guessField.focus();
       }
 
     </script>
