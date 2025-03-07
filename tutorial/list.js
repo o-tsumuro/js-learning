@@ -14,3 +14,11 @@ const cities3 = ["東京", "大阪"];
 const removeCity = cities3.pop();
 console.log(cities3);
 console.log(removeCity);
+
+/* 第一引数で指定したインデックスから第二引数で指定した数分、要素を配列から削除する*/
+const cities4 = ["東京", "大阪", "仙台"];
+const index = cities1.indexOf("大阪");
+if (index !== -1) {
+    cities4.splice(index, 2);
+}
+console.log(cities4);
