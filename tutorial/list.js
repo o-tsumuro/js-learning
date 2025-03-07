@@ -8,3 +8,9 @@ console.log(newLength);
 const cities2 = ["東京", "大阪"];
 cities2.unshift("札幌");
 console.log(cities2)
+
+/* pop関数は配列から最後の項目を削除し、削除された項目を返す */
+const cities3 = ["東京", "大阪"];
+const removeCity = cities3.pop();
+console.log(cities3);
+console.log(removeCity);
