@@ -41,7 +41,7 @@
 
     input.addEventListener("change", () => {
       const num = parseFloat(input.value);
-      if (isNaN(num)) {
+      if (isNaN(num)) { //isNan()は引数が数値でない場合にtrue,数値の場合にfalseを返す
         para.textContent = "数値を入力してください。";
       } else {
         para.textContent = `${num}の二乗は${squared(num)}です。`;
