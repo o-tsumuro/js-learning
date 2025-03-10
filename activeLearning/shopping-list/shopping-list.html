@@ -31,7 +31,25 @@
     </ul>
 
     <script>
+        const ul = document.querySelector("ul");
+        const input = document.querySelector("input");
+        const btn = document.querySelector("button");
 
+        btn.addEventListener("click", () => {
+            const inputText = input.value;
+            input.value = "";
+            const newLi = document.createElement("li");
+            const newSpan = document.createElement("span");
+            const delBtn = document.createElement("button");
+            newLi.appendChild(newSpan);
+            newLi.appendChild(delBtn);
+            newSpan.textContent = inputText;
+            delBtn.textContent = "削除";
+            ul.appendChild(newLi);
+            delBtn.addEventListener("click", () => {
+                newLi.parentNode.removeChild(newLi);
+            })
+        });
     </script>
   </body>
 </html>
